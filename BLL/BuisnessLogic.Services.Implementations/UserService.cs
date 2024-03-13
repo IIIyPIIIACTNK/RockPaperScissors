@@ -39,13 +39,13 @@ namespace BuisnessLogic.Services.Implementations
 
         public async Task UpdateAsync(string id, UserDto userDto)
         {
-            var user = await _userRepository.GetAsync(id);
-            if(user == null)
+            var entity = await _userRepository.GetAsync(id);
+            if(entity == null)
             {
                 throw new Exception($"Не существует сущности с id {id}");
             }
-            user.Balance = userDto.Balance;
-            _userRepository.Update(user);
+            entity.Balance = userDto.Balance;
+            _userRepository.Update(entity);
             await _userRepository.SaveChangesAsync();
         }
     }
