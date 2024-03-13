@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Entities
 {
-    public class Transactions : IEntity<string>
+    public class Transaction : IEntity<string>
     {
         public string Id { get; set; }
         public User Sender { get; set; }
