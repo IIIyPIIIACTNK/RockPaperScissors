@@ -19,9 +19,10 @@ namespace BuisnessLogic.Services.Implementations
         public async Task<string> CreateAsync(UserDto userDto)
         {
             var user = _mapper.Map<User>(userDto);
+            user.Id = Guid.NewGuid().ToString();
             var createdUser = await _userRepository.AddAsync(user);
             await _userRepository.SaveChangesAsync();
-            return user.Id;
+            return createdUser.Id;
         }
 
         public Task DeleteAsync(string id)
