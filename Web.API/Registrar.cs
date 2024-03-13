@@ -20,13 +20,21 @@ namespace Web.API
         private static IServiceCollection InstallServices(this IServiceCollection services)
         {
             return services
-                .AddTransient<IUserService,UserService>();
+                .AddTransient<IUserService, UserService>()
+                .AddTransient<IMatchHistoryService, MatchHistoryService>()
+                .AddTransient<IMatchService, MatchService>()
+                .AddTransient<IGameTransactionService, GameTransactionService>()
+                .AddTransient<ITransactionService,TransactionService>();
         }
 
         private static IServiceCollection InstallRepositories(this IServiceCollection services)
         {
             return services
-                .AddTransient<IUserRepository, UserRepository>();
+                .AddTransient<IUserRepository, UserRepository>()
+                .AddTransient<IMatchRepository,MatchRepository>()
+                .AddTransient<IMatchHistoryRepository, MatchHistoryRepository>()
+                .AddTransient<IGameTransactionsRepository, GameTransactionsRepository>()
+                .AddTransient<ITransactionRepository,TransactionRepository>();
         }
     }
 }
