@@ -74,8 +74,12 @@ namespace Web.API
             var configuration = new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile<UserMappingProfile>();
+                cfg.AddProfile<GameTransactionProfile>();
+                cfg.AddProfile<MatchMappingProfile>();
+                cfg.AddProfile<MatchHistoryProfile>();
+                cfg.AddProfile<TransactionMappingProfile>();
             });
-            //configuration.AssertConfigurationIsValid();
+            configuration.AssertConfigurationIsValid();
             return configuration;
         }
     }
