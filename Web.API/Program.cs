@@ -11,6 +11,7 @@ namespace Web.API
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    //webBuilder.ConfigureKestrel(options => options.ListenLocalhost(5001));
                     webBuilder.UseStartup<Startup>();
                     webBuilder.ConfigureAppConfiguration((hostingContext, config) =>
                     {

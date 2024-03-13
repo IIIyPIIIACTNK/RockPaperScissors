@@ -13,8 +13,7 @@ namespace Web.API
             return services.AddSingleton((IConfigurationRoot)configuration)
                 .InstallServices()
                 .ConfigureContext(applicationSettings.ConnectionString)
-                .InstallRepositories()
-                ;
+                .InstallRepositories();
         }
 
         private static IServiceCollection InstallServices(this IServiceCollection services)

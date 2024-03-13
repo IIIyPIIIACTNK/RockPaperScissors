@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option csharp_namespace = "Web.API";
+
+service User{
+	rpc CreateUser (CreateRequest) returns (CreateReply);
+	rpc GetUser (GetRequest) returns (GetReply);
+}
+
+message CreateRequest{
+	string name = 1;
+	
+}
+
+message CreateReply{
+	string message = 1;
+}
+
+message GetRequest{
+	string id = 1;
+}
+
+message GetReply{
+	string id = 1;
+	string name = 2;
+	string balance = 3;
+}

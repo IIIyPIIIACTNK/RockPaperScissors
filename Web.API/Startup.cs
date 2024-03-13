@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BuisnessLogic.Services.Implementations.Mapping;
+using Web.API.Services;
 
 namespace Web.API
 {
@@ -21,6 +22,8 @@ namespace Web.API
             services.AddCors();
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen();
+            // Add gRPC
+            services.AddGrpc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +55,7 @@ namespace Web.API
 
                 app.UseSwaggerUI(c =>
                 {
+                    
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
                     c.RoutePrefix = string.Empty;
                 });
@@ -59,6 +63,8 @@ namespace Web.API
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapGrpcService<UserGrpcService>();
+
                 endpoints.MapControllers();
             });
         }
