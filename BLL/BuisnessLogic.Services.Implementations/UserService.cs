@@ -42,7 +42,7 @@ namespace BuisnessLogic.Services.Implementations
             var user = await _userRepository.GetAsync(id);
             if(user == null)
             {
-                throw new Exception($"Не существует пользователя с id {id}");
+                throw new Exception($"Не существует сущности с id {id}");
             }
             user.Balance = userDto.Balance;
             _userRepository.Update(user);

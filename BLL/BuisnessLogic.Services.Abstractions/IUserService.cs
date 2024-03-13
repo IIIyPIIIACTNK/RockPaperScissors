@@ -23,14 +23,14 @@ namespace BuisnessLogic.Services.Abstractions
         Task<string> CreateAsync(UserDto userDto);
 
         /// <summary>
-        /// Изменить курс.
+        /// Изменить пользователя.
         /// </summary>
         /// <param name="id"> Иентификатор. </param>
         /// <param name="userDto"> ДТО пользователя. </param>
         Task UpdateAsync(string id, UserDto userDto);
 
         /// <summary>
-        /// Удалить курс.
+        /// Удалить пользователя.
         /// </summary>
         /// <param name="id"> Идентификатор. </param>
         Task DeleteAsync(string id);
