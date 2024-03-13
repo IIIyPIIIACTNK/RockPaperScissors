@@ -1,9 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DAL\DataAccess.Entities\DataAccess.Entities.csproj" />
+    <ProjectReference Include="..\..\DAL\DataAccess.Repositories.Abstractions\DataAccess.Repositories.Abstractions.csproj" />
+    <ProjectReference Include="..\BuisnessLogic.Contracts\BuisnessLogic.Contracts.csproj" />
+    <ProjectReference Include="..\BuisnessLogic.Services.Abstractions\BuisnessLogic.Services.Abstractions.csproj" />
+  </ItemGroup>
 
 </Project>
