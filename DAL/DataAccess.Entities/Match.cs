@@ -11,5 +11,6 @@ namespace DataAccess.Entities
         public string Id { get; set; }
         public User Player1 { get; set; }
         public User Player2 { get; set; }
+        public decimal Bid { get; set; }
     }
 }
