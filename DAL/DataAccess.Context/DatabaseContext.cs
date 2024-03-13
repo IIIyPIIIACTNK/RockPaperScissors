@@ -25,7 +25,7 @@ namespace DataAccess.Context
         /// <summary>
         /// Транзакции
         /// </summary>
-        public DbSet<Transactions> Transactions { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
         /// <summary>
         /// Транзакции матче
         /// </summary>
@@ -41,7 +41,7 @@ namespace DataAccess.Context
                 .ToTable("users");
             modelBuilder.Entity<Match>()
                 .ToTable("matches");
-            modelBuilder.Entity<Transactions>()
+            modelBuilder.Entity<Transaction>()
                 .ToTable("transactions");
             modelBuilder.Entity<GameTransactions>()
                 .ToTable("gametransactions");

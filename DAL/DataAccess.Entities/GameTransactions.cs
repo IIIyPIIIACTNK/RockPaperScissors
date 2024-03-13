@@ -9,7 +9,7 @@ namespace DataAccess.Entities
     public class GameTransactions : IEntity<string>
     {
         public string Id { get; set; }
-        public List<Transactions> Transactions { get; set; }
+        public List<Transaction> Transactions { get; set; }
         public Match Match { get; set; }
     }
 }
