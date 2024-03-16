@@ -9,5 +9,6 @@ namespace DataAccess.Repositories.Abstractions
 {
     public interface IUserRepository : IRepository<User,string>
     {
+        public Task<User> GetByName(string name);
     }
 }

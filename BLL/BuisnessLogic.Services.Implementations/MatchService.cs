@@ -37,6 +37,11 @@ namespace BuisnessLogic.Services.Implementations
             return Task.CompletedTask;
         }
 
+        public async Task<List<MatchDto>> GetAllAsync()
+        {
+            return _mapper.Map<List<Match>, List<MatchDto>>(_matchRepository.GetAll().ToList());
+        }
+
         public async Task<MatchDto> GetByIdAsync(string id)
         {
             var match = await _matchRepository.GetAsync(id);

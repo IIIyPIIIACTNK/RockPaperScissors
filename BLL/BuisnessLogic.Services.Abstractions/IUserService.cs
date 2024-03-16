@@ -34,5 +34,7 @@ namespace BuisnessLogic.Services.Abstractions
         /// </summary>
         /// <param name="id"> Идентификатор. </param>
         Task DeleteAsync(string id);
+
+        Task<UserDto> GetByName(string name);
     }
 }

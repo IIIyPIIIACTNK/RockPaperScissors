@@ -1,10 +1,11 @@
 syntax = "proto3";
 
-option csharp_namespace = "Web.API";
+option csharp_namespace = "ConsoleClient";
 
 service User{
 	rpc CreateUser (CreateRequest) returns (CreateReply);
 	rpc GetUser (GetRequest) returns (GetReply);
+	rpc CreateOrGetUser(CreateRequest) returns(CreateReply);
 }
 
 message CreateRequest{

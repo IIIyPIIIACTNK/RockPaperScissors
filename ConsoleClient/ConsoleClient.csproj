@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Protos\gameService.proto" />
     <None Remove="Protos\userService.proto" />
   </ItemGroup>
 
@@ -21,6 +22,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Web.API\Web.API.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protos\gameService.proto" GrpcServices="Client" />
     <Protobuf Include="Protos\userService.proto" GrpcServices="Client" />
   </ItemGroup>
 

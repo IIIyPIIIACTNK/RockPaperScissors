@@ -64,7 +64,7 @@ namespace Web.API
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGrpcService<UserGrpcService>();
-
+                endpoints.MapGrpcService<GameGrpcService>();
                 endpoints.MapControllers();
             });
         }

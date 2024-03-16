@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option csharp_namespace = "Web.API";
+
+service Game{
+	rpc CreateGame (CreateGameRequest) returns (CreateGameReply);
+	rpc GetAllGames (GetAllGamesRequest) returns (stream GetGameResponce);
+}
+
+message CreateGameRequest{
+	string bid = 1;
+	string userId = 2;
+}
+
+message CreateGameReply{
+	string gameId = 1;
+}
+message GetGameResponce{
+	string gameId = 1;
+	string user1Id = 2;
+	string user2Id = 3;
+	string bid = 4;
+}
+message GetAllGamesRequest{
+
+}
+

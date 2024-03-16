@@ -37,6 +37,11 @@ namespace BuisnessLogic.Services.Implementations
             return _mapper.Map<UserDto>(user);
         }
 
+        public async Task<UserDto> GetByName(string name)
+        {
+            return _mapper.Map<UserDto>(await _userRepository.GetByName(name));
+        }
+
         public async Task UpdateAsync(string id, UserDto userDto)
         {
             var entity = await _userRepository.GetAsync(id);
